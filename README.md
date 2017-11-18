@@ -11,7 +11,7 @@ ant -buildfile src/build.xml all
 -----------------------------------------------------------------------
 ## To run by specifying arguments from command line 
 ## We will use this to run your code
-ant -buildfile src/build.xml run -Darg0=<InputFile> -Darg1=<OutputFile> -Darg2=<NUM_THREADS> -Darg3=<"DeleteWords"> -Darg4=<DebugValue>
+ant -buildfile src/build.xml run -Darg0=input.txt  -Darg1=output.txt Darg2=debugLevel
 
 -----------------------------------------------------------------------
 
@@ -22,7 +22,7 @@ official form that I have cheated and that this form will be stored in
 my official university record. I also understand that I will receive a
 grade of 0 for the involved assignment for my first offense and that I
 will receive a grade of F for the course for any additional
-offense."
+offense.”
 
 [Date: 11/08/2017]
 
@@ -43,7 +43,7 @@ BST for storing words:
 	Best: Insert O(1), Update O(1) [We are never deleting node]
 	Average: Insert O(Log(N)), Update O(Log(N))
 	Worst: Insert O(N), Update O(N)
-		[Assuming input file is randomly distributed, it is very
+		[Assuming input file is randomly distributed, it is very 
 		unlikely for the Worst case to happen]
 	
 -----------------------------------------------------------------------

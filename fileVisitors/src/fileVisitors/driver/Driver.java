@@ -1,16 +1,23 @@
-package wordTree.driver;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package nishant_shah_sean_annunciation_assign5.fileVisitors.src.fileVisitors.driver;
 
 import java.lang.NumberFormatException;
 import java.lang.RuntimeException;
-import wordTree.store.Results;
-import wordTree.util.MyLogger;
-import wordTree.util.FileProcessor;
-import wordTree.util.TreeBuilder;
-import wordTree.store.Results;
-import wordTree.threadMgmt.CreateWorkers;
 import java.util.InputMismatchException;
 import java.io.FileNotFoundException;
+import nishant_shah_sean_annunciation_assign5.fileVisitors.src.fileVisitors.store.Results;
+import nishant_shah_sean_annunciation_assign5.fileVisitors.src.fileVisitors.util.FileProcessor;
+import nishant_shah_sean_annunciation_assign5.fileVisitors.src.fileVisitors.util.MyLogger;
+import nishant_shah_sean_annunciation_assign5.fileVisitors.src.fileVisitors.util.TreeBuilder;
 
+/**
+ *
+ * @author annse
+ */
 public class Driver {
 	
 	/**
@@ -29,7 +36,7 @@ public class Driver {
 		
 		FileProcessor fileP = null;
 		Results r = null;
-	    TreeBuilder tb = null;
+                TreeBuilder tb = null;
 		
 		try {
 			if(5 == args.length) {
@@ -73,13 +80,13 @@ public class Driver {
 		}
 		
 		r = new Results(opFile);
-	    tb = new TreeBuilder(r);
+                //tb = new TreeBuilder(r);
 	
-		CreateWorkers cw = new CreateWorkers(fileP, r, tb);
-		cw.startPopulateWorkers(NUM_THREADS);
-		cw.startDeleteWorkers(NUM_THREADS, dlWords);
+//		CreateWorkers cw = new CreateWorkers(fileP, r, tb);
+//		cw.startPopulateWorkers(NUM_THREADS);
+//		cw.startDeleteWorkers(NUM_THREADS, dlWords);
 		
-		tb.calcValues();
+		//tb.calcValues();
 		r.writeToStdout();
 		
 		try {

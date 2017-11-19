@@ -12,9 +12,30 @@ public class VisitorHelper {
 		    }
 		    return true;    
 		}
-	}	
+	}
+	
+	
+	public boolean isLengthPrime(String word) {
+            
+            boolean val=true;
+            int len=word.length();
+            for(int i=2;i<=len/2;i++)
+            {
+                if(len%i==0)
+                {                  
+                val=false;
+                }
+            }
+            
+            return val;
+                
+}
 }
 
 /**isPalindrome() implementation source:
  * http://componentsprogramming.com/palindromes
+ * 
+ * isLengthPrime() implementation source:
+ * https://www.programiz.com/java-programming/examples/prime-number
+ * 
  */

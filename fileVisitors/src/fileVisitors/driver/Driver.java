@@ -1,23 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package nishant_shah_sean_annunciation_assign5.fileVisitors.src.fileVisitors.driver;
+package fileVisitors.driver;
 
 import java.lang.NumberFormatException;
 import java.lang.RuntimeException;
+import fileVisitors.store.Results;
+import fileVisitors.util.MyLogger;
+import fileVisitors.util.FileProcessor;
+import fileVisitors.util.TreeBuilder;
+import fileVisitors.store.Results;
+//import fileVisitors.threadMgmt.CreateWorkers;
 import java.util.InputMismatchException;
 import java.io.FileNotFoundException;
-import nishant_shah_sean_annunciation_assign5.fileVisitors.src.fileVisitors.store.Results;
-import nishant_shah_sean_annunciation_assign5.fileVisitors.src.fileVisitors.util.FileProcessor;
-import nishant_shah_sean_annunciation_assign5.fileVisitors.src.fileVisitors.util.MyLogger;
-import nishant_shah_sean_annunciation_assign5.fileVisitors.src.fileVisitors.util.TreeBuilder;
 
-/**
- *
- * @author annse
- */
 public class Driver {
 	
 	/**
@@ -28,32 +21,18 @@ public class Driver {
 
 		String ipFile = null;
 		String opFile = null;
-		
-		String[] dlWords = null;
-		
-		int NUM_THREADS = 0;
 		int debugValueSetter = -1;
 		
 		FileProcessor fileP = null;
 		Results r = null;
-                TreeBuilder tb = null;
+	    TreeBuilder tb = null;
 		
 		try {
-			if(5 == args.length) {
+			if(3 == args.length) {
        	        ipFile = args[0];
 	            opFile = args[1];
 	            
-	            NUM_THREADS = Integer.parseInt(args[2]);
-	            if(!(NUM_THREADS >= 1 && NUM_THREADS <= 3)) {
-	            	throw new RuntimeException("Number of threads must be integers between 1 and 3 inclusive");
-	            }
-	            
-	            dlWords = args[3].split("\\s+");
-	            if(!(NUM_THREADS == dlWords.length)) {
-	            	throw new RuntimeException("Delete words should be same as number of threads");
-	            }
-	            
-	            debugValueSetter = Integer.parseInt(args[4]);
+	            debugValueSetter = Integer.parseInt(args[2]);
 	            if(!(debugValueSetter >= 0 && debugValueSetter <= 4)) {
 	            	throw new RuntimeException("Debug value must be integers between 0 and 4 inclusive");
 	            }
@@ -78,15 +57,15 @@ public class Driver {
 			e.printStackTrace();
 			System.exit(1);
 		}
-		
+/*		
 		r = new Results(opFile);
-                //tb = new TreeBuilder(r);
+	    tb = new TreeBuilder(r);
 	
-//		CreateWorkers cw = new CreateWorkers(fileP, r, tb);
-//		cw.startPopulateWorkers(NUM_THREADS);
-//		cw.startDeleteWorkers(NUM_THREADS, dlWords);
+		CreateWorkers cw = new CreateWorkers(fileP, r, tb);
+		cw.startPopulateWorkers(NUM_THREADS);
+		cw.startDeleteWorkers(NUM_THREADS, dlWords);
 		
-		//tb.calcValues();
+		tb.calcValues();
 		r.writeToStdout();
 		
 		try {
@@ -96,6 +75,6 @@ public class Driver {
 			System.err.println("Output file cannot be generated");
 			e.printStackTrace();
 			System.exit(1);
-		}
+		}*/
 	}
 }

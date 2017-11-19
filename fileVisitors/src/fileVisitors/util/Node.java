@@ -1,18 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package nishant_shah_sean_annunciation_assign5.fileVisitors.src.fileVisitors.util;
+package fileVisitors.util;
 
-/**
- *
- * @author annse
- */
 public class Node {
 	
 	private String word = null;
-	private int count = 0;
 	private Node left = null;
 	private Node right = null;
 		
@@ -23,7 +13,6 @@ public class Node {
 	public Node(String wordI) {
 		MyLogger.writeMessage("Node constructor called", MyLogger.DebugLevel.CONSTRUCTOR);
 		word = wordI;
-		count = 1;
 		left = null;
 		right = null;
 	}
@@ -50,18 +39,11 @@ public class Node {
 	}
 	
 	/**
-	 * @return int - current count
+	 * @param wordI - word to be updated
 	 */
-	public int getCount() {
-		return count;
-	}
-	
-	public void increaseCount() {
-		count++;
-	}
-	
-	public void decreaseCount() {
-		count--;
+	public void setWord(String wordI) {
+		word = null;
+		word = wordI;
 	}
 	
 	/**
@@ -76,12 +58,5 @@ public class Node {
 	 */
 	public void setRight(Node n) {
 		right = n;
-	}
-	
-	/**
-	 * @return int - character count for that word
-	 */
-	public int charCount() {
-		return (word.length() * count);
 	}
 }

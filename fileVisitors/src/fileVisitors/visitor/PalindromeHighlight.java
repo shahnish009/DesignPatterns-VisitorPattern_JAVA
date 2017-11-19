@@ -14,12 +14,12 @@ public class PalindromeHighlight implements visitorI {
 	
 	/**
 	 * constructor for Palindrome Highlight
-	 * @param fpI - FileProcessor reference
 	 */
-	public PalindromeHighlight (FileProcessor fpI) {
-		fp = fpI;
-	}
+	public PalindromeHighlight () {}
 
+	/**
+	 * @param tb - treeBuilder reference
+	 */
 	public void visit(TreeBuilder tb) {
 		inorderVal(tb.getRoot());
 	}

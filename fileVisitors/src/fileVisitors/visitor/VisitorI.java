@@ -11,11 +11,6 @@ package nishant_shah_sean_annunciation_assign5.fileVisitors.src.fileVisitors.vis
  */
 public interface VisitorI {
     
-    public void visit(PopulateVisitor populatevistor);
-    public void visit(PalindromeHighlight palindromehighlight);
-    public void visit(PrimeLength primelength);
-    public void visit(PrintTree printtree);
-    
-    
-    
+    public void visit(TreeBuilder treebuilder);
+      
 }

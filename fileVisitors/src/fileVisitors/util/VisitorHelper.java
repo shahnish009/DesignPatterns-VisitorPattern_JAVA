@@ -19,13 +19,17 @@ public class VisitorHelper {
             
             boolean val=true;
             int len=word.length();
-            for(int i=2;i<=len/2;i++)
+            if (len>=2){
+                for(int i=2;i<=len/2;i++)
             {
                 if(len%i==0)
                 {                  
                 val=false;
                 }
             }
+            }
+            else
+                val=false;
             
             return val;
                 

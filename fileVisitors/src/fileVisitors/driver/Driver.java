@@ -57,6 +57,25 @@ public class Driver {
 			e.printStackTrace();
 			System.exit(1);
 		}
+		
+		
+		
+		tb=new TreeBuilder();
+               r=new Results(opFile);
+               
+               
+               Visitor PopulateVisitor=(Visitor) new PopulateVisitor(fileP,tb);
+               Visitor PalindromeHighlight=(Visitor) new PalindromeHighlight();
+               Visitor PrimeLength=(Visitor) new PrimeLength(fileP,tb);
+               Visitor PrintTree=(Visitor) new PrintTree(fileP,tb,r);
+               
+               
+               tb.accept(PopulateVisitor);
+               tb.accept(PalindromeHighlight);
+               tb.accept(Primelength);
+               tb.accept(Primelength);
+			   
+			   
 /*		
 		r = new Results(opFile);
 	    tb = new TreeBuilder(r);

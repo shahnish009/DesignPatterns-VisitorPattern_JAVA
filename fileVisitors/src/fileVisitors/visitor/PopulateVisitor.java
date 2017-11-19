@@ -7,7 +7,6 @@ import fileVisitors.util.MyLogger;
 public class PopulateVisitor implements visitorI{
 	
 	private FileProcessor fp = null;
-	private TreeBuilder tb = null;
 	private String word = null;
 	
 	public PopulateVisitor (FileProcessor fpI, TreeBuilder tbI) {
@@ -15,7 +14,7 @@ public class PopulateVisitor implements visitorI{
 		tb = tbI;
 	}
 	
-	public void visit() {
+	public void visit(TreeBuilder tb) {
 		while((word = fp.readLine()) != null) {
 			try {
                 tb.insert(word);

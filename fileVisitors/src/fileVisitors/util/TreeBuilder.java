@@ -2,6 +2,10 @@ package fileVisitors.util;
 
 import wordTree.store.Results;
 
+/**
+ *
+ * @author annse
+ */
 public class TreeBuilder {
 	private Node root;
 	private Results rs = null;
@@ -38,7 +42,7 @@ public class TreeBuilder {
 				rootI.setRight(insertVal(rootI.getRight(), val));
 			}
 			else if (((rootI.getWord()).compareTo(val)) == 0) {
-				rootI.increaseCount();
+				//rootI.increaseCount();
 			}
 		}
 		return rootI;
@@ -50,6 +54,14 @@ public class TreeBuilder {
 	public Node getRoot() {
 		return root;
 	}
+        
+        
+        
+        public void accept(Visitor visitor)
+        {
+             visitor.visit(this);
+                    
+        }
 	/**
 	 * @return word at root node
 	 */

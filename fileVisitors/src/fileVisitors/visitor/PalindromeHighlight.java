@@ -1,9 +1,13 @@
 package fileVisitors.visitor;
 
+import fileVisitors.util.FileProcessor;
+import fileVisitors.util.Node;
+import fileVisitors.util.TreeBuilder;
+import fileVisitors.util.VisitorHelper;
+
 public class PalindromeHighlight implements visitorI {
 	
 	private FileProcessor fp = null;
-	private TreeBuilder tb = null;
 	private String word = null;
 	
 	private VisitorHelper vh = new VisitorHelper();
@@ -11,14 +15,12 @@ public class PalindromeHighlight implements visitorI {
 	/**
 	 * constructor for Palindrome Highlight
 	 * @param fpI - FileProcessor reference
-	 * @param tbI - TreeBuilder Reference
 	 */
-	public PalindromeHighlight (FileProcessor fpI, TreeBuilder tbI) {
+	public PalindromeHighlight (FileProcessor fpI) {
 		fp = fpI;
-		tb = tbI;
 	}
 
-	public void visit() {
+	public void visit(TreeBuilder tb) {
 		inorderVal(tb.getRoot());
 	}
 	

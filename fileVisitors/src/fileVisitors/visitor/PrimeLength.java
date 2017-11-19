@@ -15,15 +15,13 @@ public class PrimeLength implements visitorI {
 	
 	/**
 	 * PrimeLength constructor
-	 * @param fpI - FileProcessor reference
-	 * @param tbI - TreeBuilder reference
 	 */
-	public PrimeLength (FileProcessor fpI, TreeBuilder tbI) {
-		fp = fpI;
-		tb = tbI;
-	}
+	public PrimeLength () {}
 
-	public void visit() {
+	/**
+	 * @param tb - TreeBuilder reference
+	 */
+	public void visit(TreeBuilder tb) {
 		inorderVal(tb.getRoot());
 	}
 	

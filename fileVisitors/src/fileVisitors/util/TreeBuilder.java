@@ -1,18 +1,12 @@
 package fileVisitors.util;
 
-import wordTree.store.Results;
+import fileVisitors.visitor.VisitorI;
 
-/**
- *
- * @author annse
- */
 public class TreeBuilder {
 	private Node root;
-	private Results rs = null;
 	
-	public TreeBuilder(Results rI) {
+	public TreeBuilder() {
 		MyLogger.writeMessage("TreeBuilder constructor called", MyLogger.DebugLevel.CONSTRUCTOR);
-		rs = rI;
 		root = null;
 	}
 	
@@ -41,9 +35,7 @@ public class TreeBuilder {
 			else if (((rootI.getWord()).compareTo(val)) < 0) {
 				rootI.setRight(insertVal(rootI.getRight(), val));
 			}
-			else if (((rootI.getWord()).compareTo(val)) == 0) {
-				//rootI.increaseCount();
-			}
+			else if (((rootI.getWord()).compareTo(val)) == 0) {}
 		}
 		return rootI;
 	}
@@ -54,14 +46,15 @@ public class TreeBuilder {
 	public Node getRoot() {
 		return root;
 	}
-        
-        
-        
-        public void accept(Visitor visitor)
-        {
-             visitor.visit(this);
-                    
-        }
+	
+	/**
+	 * accept method of visitor pattern
+	 * @param visitor - VisitorI object
+	 */
+	public void accept(VisitorI visitor) {
+		visitor.visit(this);
+	}
+	
 	/**
 	 * @return word at root node
 	 */

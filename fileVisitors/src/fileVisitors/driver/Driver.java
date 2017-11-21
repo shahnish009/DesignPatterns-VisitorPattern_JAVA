@@ -7,7 +7,11 @@ import fileVisitors.util.MyLogger;
 import fileVisitors.util.FileProcessor;
 import fileVisitors.util.TreeBuilder;
 import fileVisitors.store.Results;
-//import fileVisitors.threadMgmt.CreateWorkers;
+import fileVisitors.visitor.VisitorI;
+import fileVisitors.visitor.PopulateVisitor;
+import fileVisitors.visitor.PalindromeHighlight;
+import fileVisitors.visitor.PrimeLength;
+import fileVisitors.visitor.PrintTree;
 import java.util.InputMismatchException;
 import java.io.FileNotFoundException;
 
@@ -57,43 +61,18 @@ public class Driver {
 			e.printStackTrace();
 			System.exit(1);
 		}
-		
-		
-		
-		tb=new TreeBuilder();
-               r=new Results(opFile);
-               
-               
-               Visitor PopulateVisitor=(Visitor) new PopulateVisitor(fileP,tb);
-               Visitor PalindromeHighlight=(Visitor) new PalindromeHighlight();
-               Visitor PrimeLength=(Visitor) new PrimeLength(fileP,tb);
-               Visitor PrintTree=(Visitor) new PrintTree(fileP,tb,r);
-               
-               
-               tb.accept(PopulateVisitor);
-               tb.accept(PalindromeHighlight);
-               tb.accept(Primelength);
-               tb.accept(Primelength);
-			   
-			   
-/*		
+
 		r = new Results(opFile);
-	    tb = new TreeBuilder(r);
-	
-		CreateWorkers cw = new CreateWorkers(fileP, r, tb);
-		cw.startPopulateWorkers(NUM_THREADS);
-		cw.startDeleteWorkers(NUM_THREADS, dlWords);
+	    tb = new TreeBuilder();
 		
-		tb.calcValues();
-		r.writeToStdout();
+		VisitorI populate = new PopulateVisitor(fileP);
+		VisitorI palindrome = new PalindromeHighlight();
+		VisitorI prime = new PrimeLength();
+		VisitorI printv = new PrintTree(r);
 		
-		try {
-			r.writeToFile();
-		}
-		catch(FileNotFoundException e) {
-			System.err.println("Output file cannot be generated");
-			e.printStackTrace();
-			System.exit(1);
-		}*/
+		tb.accept(populate);
+		tb.accept(palindrome);
+		tb.accept(prime);
+		tb.accept(printv);
 	}
 }

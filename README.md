@@ -11,7 +11,7 @@ ant -buildfile src/build.xml all
 -----------------------------------------------------------------------
 ## To run by specifying arguments from command line 
 ## We will use this to run your code
-ant -buildfile src/build.xml run -Darg0=input.txt  -Darg1=output.txt Darg2=debugLevel
+ant -buildfile src/build.xml run -Darg0=input.txt  -Darg1=output.txt -Darg2=debugLevel
 
 -----------------------------------------------------------------------
 
@@ -22,9 +22,9 @@ official form that I have cheated and that this form will be stored in
 my official university record. I also understand that I will receive a
 grade of 0 for the involved assignment for my first offense and that I
 will receive a grade of F for the course for any additional
-offense.‚Äù
+offense.î
 
-[Date: 11/08/2017]
+[Date: 11/20/2017]
 
 -----------------------------------------------------------------------
 
@@ -55,8 +55,14 @@ Provide list of citations (urls, etc.) from where you have taken code
 http://www.geeksforgeeks.org/binary-search-tree-set-1-search-and-insertion/
 http://www.sanfoundry.com/java-program-implement-binary-search-tree/
 
-2) Motivation to select Scanner over BufferedReader:
+2) isPalindrome() implementation reference:
+http://componentsprogramming.com/palindromes
+
+3) isNumberPrime() implementation source:
+https://www.programiz.com/java-programming/examples/prime-number
+
+4) Motivation to select Scanner over BufferedReader:
 https://stackoverflow.com/questions/2231369/scanner-vs-bufferedreader
 
-3) Motivation to use PrintWriter over BufferedWriter
+5) Motivation to use PrintWriter over BufferedWriter
 https://stackoverflow.com/questions/1747040/difference-between-java-io-printwriter-and-java-io-bufferedwriter

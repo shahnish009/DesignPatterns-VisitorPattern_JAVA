@@ -20,10 +20,10 @@ public class FileProcessor {
 	}
 
 	/**
-	 * synchronized method to read word from file word by word
-	 * @return one line at a time from the input file
+	 * method to read word from file word by word
+	 * @return one woed at a time from the input file
 	 */
-	public synchronized String readLine() {
+	public String readLine() {
 		
 		try {
 			if(sc != null) {

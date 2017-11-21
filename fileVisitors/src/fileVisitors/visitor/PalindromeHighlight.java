@@ -1,26 +1,26 @@
 package fileVisitors.visitor;
 
-import fileVisitors.util.FileProcessor;
 import fileVisitors.util.Node;
 import fileVisitors.util.TreeBuilder;
 import fileVisitors.util.VisitorHelper;
+import fileVisitors.util.MyLogger;
 
-public class PalindromeHighlight implements visitorI {
-	
-	private FileProcessor fp = null;
-	private String word = null;
+public class PalindromeHighlight implements VisitorI {
 	
 	private VisitorHelper vh = new VisitorHelper();
 	
 	/**
 	 * constructor for Palindrome Highlight
 	 */
-	public PalindromeHighlight () {}
+	public PalindromeHighlight () {
+		MyLogger.writeMessage("PalindromeHighlight constructor called", MyLogger.DebugLevel.CONSTRUCTOR);
+	}
 
 	/**
 	 * @param tb - treeBuilder reference
 	 */
 	public void visit(TreeBuilder tb) {
+		MyLogger.writeMessage("PalindromeHighlight's visit() method called", MyLogger.DebugLevel.IN_RUN);
 		inorderVal(tb.getRoot());
 	}
 	

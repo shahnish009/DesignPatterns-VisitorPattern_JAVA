@@ -1,27 +1,26 @@
 package fileVisitors.visitor;
 
-import fileVisitors.util.FileProcessor;
 import fileVisitors.util.Node;
 import fileVisitors.util.TreeBuilder;
 import fileVisitors.util.VisitorHelper;
+import fileVisitors.util.MyLogger;
 
-public class PrimeLength implements visitorI {
-	
-	private FileProcessor fp = null;
-	private TreeBuilder tb = null;
-	private String word = null;
+public class PrimeLength implements VisitorI {
 	
 	private VisitorHelper vh = new VisitorHelper();
 	
 	/**
 	 * PrimeLength constructor
 	 */
-	public PrimeLength () {}
+	public PrimeLength () {
+		MyLogger.writeMessage("PrimeLength constructor called", MyLogger.DebugLevel.CONSTRUCTOR);
+	}
 
 	/**
 	 * @param tb - TreeBuilder reference
 	 */
 	public void visit(TreeBuilder tb) {
+		MyLogger.writeMessage("PrimeLength's visit() method called", MyLogger.DebugLevel.IN_RUN);
 		inorderVal(tb.getRoot());
 	}
 	

@@ -1,4 +1,4 @@
-# DesignPatterns-StatePattern_JAVA
+# DesignPatterns-VisitorPattern_JAVA
 
 # By using this code, you agree to appropriate licences
 
